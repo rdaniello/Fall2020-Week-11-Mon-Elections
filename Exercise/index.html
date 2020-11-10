@@ -249,7 +249,7 @@
        // formatting numbers in y axis to look human readable:
        let formatValue = d3.format(".2s");
        // x and y Axis function
-       let x_axis = d3.axisBottom(xScale).ticks(4)
+       let x_axis = d3.axisBottom(xScale).ticks(4).tickValues(x_axis_values).tickFormat(function(n) { return n});
        let y_axis = d3.axisLeft(yScale).ticks(4).tickFormat(function(d) { return formatValue(d)});
        //X Axis
        svg_tooltip.append("g").attr("class","axis")
